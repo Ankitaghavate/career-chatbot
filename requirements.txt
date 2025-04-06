@@ -1,1 +1,4 @@
+Flask==2.3.2
+python-dotenv==1.0.0
+google-generativeai==0.0.3  # Replace with the actual version if different
 
