@@ -1,0 +1,46 @@
+<!-- templates/report.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Career Report</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="report-container">
+        <h1>Career Analysis Report</h1>
+        
+        <div class="report-section">
+            <h2>SWOT Analysis</h2>
+            <div class="swot-grid">
+                <div class="swot-item strength">
+                    <h3>Strengths</h3>
+                    <ul>
+                        {% for item in report.swot_analysis.strengths %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- Repeat for weaknesses, opportunities, threats -->
+            </div>
+        </div>
+
+        <div class="report-section">
+            <h2>Recommended Career Paths</h2>
+            <div class="career-grid">
+                {% for career in report.career_options %}
+                <div class="career-card">
+                    <h3>{{ career.title }}</h3>
+                    <p>{{ career.description }}</p>
+                    <div class="career-stats">
+                        <p>Growth: {{ career.growth_projections }}</p>
+                        <p>Salary: {{ career.salary_range }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Add sections for roadmap and goals -->
+    </div>
+</body>
+</html>
